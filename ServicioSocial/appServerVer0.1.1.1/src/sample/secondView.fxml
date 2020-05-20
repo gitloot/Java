@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+   <children>
+      <Pane fx:id="panel0" prefHeight="480.0" prefWidth="720.0">
+         <children>
+            <ImageView fitHeight="132.0" fitWidth="132.0" layoutX="109.0" layoutY="195.0" onMouseClicked="#NextPanel1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Consulta.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="31.0" layoutY="41.0" onMouseClicked="#editDato" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search-icon.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="commandField" layoutX="109.0" layoutY="59.0" prefHeight="25.0" prefWidth="577.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="panel1" layoutX="338.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="148.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#consultaPorNumInventario" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/numInventario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="148.0" layoutX="26.0" layoutY="138.0" onMouseClicked="#consultaAllData" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/all.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="145.0" layoutX="28.0" layoutY="76.0" onMouseClicked="#consultaPorMarca" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Marca.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panel2" prefHeight="480.0" prefWidth="720.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="33.0" layoutY="14.0" onMouseClicked="#NextPanel2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableView" editable="true" layoutX="14.0" layoutY="96.0" prefHeight="369.0" prefWidth="691.0">
+              <columns>
+                <TableColumn fx:id="equipoColumn" prefWidth="75.0" text="Equipo" />
+                <TableColumn fx:id="num_inventarioColumn" prefWidth="75.0" text="No. inventario" />
+                  <TableColumn fx:id="marcaColumn" prefWidth="75.0" text="Marca" />
+                  <TableColumn fx:id="modeloColumn" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="num_serieColumn" prefWidth="75.0" text="No. Serie" />
+                  <TableColumn fx:id="soColumn" prefWidth="75.0" text="S.O." />
+                  <TableColumn fx:id="num_procesadoresColumn" prefWidth="75.0" text="No. Procesadores" />
+                  <TableColumn fx:id="num_unidad_almacColumn" prefWidth="75.0" text="No. Unid. de almac." />
+                  <TableColumn fx:id="config_disp_almacColumn" prefWidth="75.0" text="Config. disp. almac." />
+                  <TableColumn fx:id="num_tarj_videoColumn" prefWidth="75.0" text="No. Tarj. Video" />
+                  <TableColumn fx:id="num_interface_redColumn" prefWidth="75.0" text="No. interfaz de red" />
+                  <TableColumn fx:id="num_unidad_lectColumn" prefWidth="75.0" text="No. unid. lect." />
+                  <TableColumn fx:id="final_userColumn" prefWidth="75.0" text="Final user" />
+                  <TableColumn fx:id="carac_addColumn" prefWidth="75.0" text="Car. add." />
+                  <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="Estado" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ImageView fx:id="editImage" fitHeight="45.0" fitWidth="142.0" layoutX="532.0" layoutY="27.0" onMouseClicked="#editButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Editar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panel3" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <TextField fx:id="equipoField" layoutX="452.0" layoutY="90.0" onKeyPressed="#editTextField" />
+            <ImageView fitHeight="38.0" fitWidth="147.0" layoutX="306.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/EquipoLabel.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="equipoLabel" layoutX="452.0" layoutY="68.0" prefHeight="17.0" prefWidth="148.0" text="Equipo" />
+            <TextField fx:id="numInvField" layoutX="452.0" layoutY="142.0" onKeyPressed="#editTextField" />
+            <ImageView fitHeight="38.0" fitWidth="132.0" layoutX="306.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/numInventarioLabel.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numInvLabel" layoutX="452.0" layoutY="122.0" prefHeight="17.0" prefWidth="148.0" text="Número de inventario" />
+            <ImageView fitHeight="89.0" fitWidth="79.0" layoutX="601.0" layoutY="387.0" onMouseClicked="#updateDatos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Save.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="36.0" layoutY="33.0" onMouseClicked="#Panel3a2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <TableView fx:id="tableView1" editable="true" layoutX="260.0" layoutY="140.0" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="procesadorColumn" prefWidth="75.0" />
+                <TableColumn prefWidth="75.0" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ImageView fitHeight="48.0" fitWidth="163.0" layoutX="377.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Editar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>
