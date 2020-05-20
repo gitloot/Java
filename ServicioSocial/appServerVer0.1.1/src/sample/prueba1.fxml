@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/escudofi_blanco.jpg" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="passField" layoutX="207.0" layoutY="212.0" onKeyPressed="#iniciarSesion">
+         <effect>
+            <DropShadow spread="0.28" />
+         </effect></PasswordField>
+      <TextField fx:id="userField" layoutX="210.0" layoutY="160.0" onKeyPressed="#iniciarSesion" prefHeight="25.0" prefWidth="142.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <Blend mode="COLOR_DODGE">
+               <topInput>
+                  <Shadow />
+               </topInput>
+            </Blend>
+         </effect></TextField>
+      <Label disable="true" layoutX="94.0" layoutY="159.0" text="Usuario">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="78.0" layoutY="211.0" text="Contraseña">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button disable="true" layoutX="104.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#iniciarSesion" prefHeight="25.0" prefWidth="123.0" text="Iniciar sesión">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="etiquetaUsPass" layoutX="65.0" layoutY="249.0" prefHeight="27.0" prefWidth="288.0" text="Resultado" textFill="TRANSPARENT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="65.0" fitWidth="123.0" layoutX="64.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/UserLabel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="123.0" layoutX="65.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/PassLabel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="142.0" layoutX="210.0" layoutY="286.0" onMouseClicked="#iniciarSesion2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iniciarSesion.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

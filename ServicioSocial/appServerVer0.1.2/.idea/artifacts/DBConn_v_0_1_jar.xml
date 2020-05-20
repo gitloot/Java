@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DBConn_v_0_1:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/DBConn_v_0_1_jar</output-path>
+    <root id="archive" name="DBConn.jar">
+      <element id="module-output" name="DBConn" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externFiles/mysql-connector-java-8.0.17.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

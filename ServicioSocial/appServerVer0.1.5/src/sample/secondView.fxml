@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+   <children>
+      <Pane fx:id="panel0" layoutX="-7.0" prefHeight="480.0" prefWidth="720.0">
+         <children>
+            <TextField fx:id="commandField" layoutX="209.0" layoutY="60.0" onKeyPressed="#searchForTextField1" prefHeight="25.0" prefWidth="387.0" visible="false" />
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="606.0" layoutY="41.0" onMouseClicked="#searchClickingMouse1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="243.0" fitWidth="720.0" layoutX="7.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/aereafi_02.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="200.0" layoutX="277.0" layoutY="377.0" onMouseClicked="#Panel0a4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/advanceSearch.png" />
+               </image>
+            </ImageView>
+            <HBox fx:id="searchBox" layoutX="209.0" layoutY="60.0" prefHeight="26.0" prefWidth="378.0" visible="false">
+               <children>
+                  <MenuButton fx:id="menuEdificio" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Edificio">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi1" text="P" />
+                      <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi1" text="Q" />
+                    </items>
+                  </MenuButton>
+                  <Label text="-" textAlignment="CENTER" />
+                  <MenuButton fx:id="menuPiso" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="125.0" text="Piso">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi2" text="1" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi2" text="2" />
+                     </items>
+                  </MenuButton>
+                  <Label text="-" textAlignment="CENTER" />
+                  <MenuButton fx:id="menuSalon" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" prefWidth="125.0" text="Salón">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi3" text="01" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButtonUbi3" text="02" />
+                     </items>
+                  </MenuButton>
+               </children>
+            </HBox>
+            <MenuButton fx:id="menuButton" layoutX="38.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="...">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="..." />
+                <MenuItem mnemonicParsing="false" onAction="#selectButton" text="# Inventario" />
+                <MenuItem mnemonicParsing="false" onAction="#selectButton" text="# Serial" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Modelo" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Marca" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Ubicación" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Estado del bien" />
+              </items>
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MenuButton>
+            <MenuButton fx:id="menuModels1" layoutX="209.0" layoutY="59.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="387.0" text="..." visible="false">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="..." />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="HP" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="Dell" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="Nvidia" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="Lenovo" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="Acer" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButtonModels1" text="Mac" />
+               </items>
+            </MenuButton>
+            <ImageView fitHeight="48.0" fitWidth="165.0" layoutX="173.0" layoutY="408.0" onMouseClicked="#crearCSV" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/descargar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="165.0" layoutX="46.0" layoutY="359.0" onMouseClicked="#crearExcel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Excel.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="165.0" layoutX="525.0" layoutY="384.0" onMouseClicked="#insertar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Insertar.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="60.0" layoutY="407.0" prefHeight="25.0" prefWidth="55.0" text="CSV">
+               <font>
+                  <Font name="Javanese Text" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="165.0" layoutX="115.0" layoutY="408.0" onMouseClicked="#cargarCSV" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/subir.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panel1" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="462.0" layoutY="9.0" onMouseClicked="#borrado" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ecologia-y-medio-ambiente.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="61.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#Panel1a0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="549.0" layoutY="15.0" onMouseClicked="#moreInfoButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/add-square-button.png" />
+               </image>
+            </ImageView>
+            <TabPane fx:id="tabPaneTables" layoutY="80.0" prefHeight="400.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabTablesGeneral" text="General">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableView" editable="true" prefHeight="369.0" prefWidth="720.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TableColumn fx:id="equipoColumn" prefWidth="75.0" text="Equipo" />
+                                    <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
+                                  <TableColumn fx:id="num_inventarioColumn" prefWidth="75.0" text="No. inventario" />
+                                    <TableColumn fx:id="marcaColumn" prefWidth="75.0" text="Marca" />
+                                    <TableColumn fx:id="modeloColumn" prefWidth="75.0" text="Modelo" />
+                                    <TableColumn fx:id="num_serieColumn" prefWidth="75.0" text="No. Serie" />
+                                    <TableColumn fx:id="descripcionColumn" prefWidth="75.0" text="Descripcion" />
+                                    <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="Estado" />
+                                    <TableColumn fx:id="final_userColumn" prefWidth="75.0" text="Final user" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabTablesUbicacion" text="Ubicación">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableUbicacion" editable="true" prefHeight="369.0" prefWidth="720.0" tableMenuButtonVisible="true">
+                                <columns>
+                                    <TableColumn fx:id="equipoUbiColumn" prefWidth="75.0" text="Equipo" />
+                                    <TableColumn fx:id="numInvUbiColumn" prefWidth="75.0" text="No. Inventario" />
+                                  <TableColumn fx:id="edificioUbiColumn" prefWidth="75.0" text="Edificio" />
+                                  <TableColumn fx:id="pisoUbiColumn" prefWidth="75.0" text="Piso" />
+                                    <TableColumn fx:id="cubiculoUbiColumn" prefWidth="75.0" text="Cubiculo" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabTablesAdvance" text="Avanzado">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableArticulo" editable="true" prefHeight="369.0" prefWidth="720.0" tableMenuButtonVisible="true">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                    <TableColumn fx:id="equipoColumnA" prefWidth="75.0" text="Equipo" />
+                                    <TableColumn fx:id="nombreColumnA" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="num_inventarioColumnA" prefWidth="75.0" text="No. inventario" />
+                                    <TableColumn fx:id="marcaColumnA" prefWidth="75.0" text="Marca" />
+                                    <TableColumn fx:id="modeloColumnA" prefWidth="75.0" text="Modelo" />
+                                    <TableColumn fx:id="num_serieColumnA" prefWidth="75.0" text="No. Serie" />
+                                    <TableColumn fx:id="descripcionColumnA" prefWidth="75.0" text="Descripcion" />
+                                    <TableColumn fx:id="estadoColumnA" prefWidth="75.0" text="Estado" />
+                                    <TableColumn fx:id="final_userColumnA" prefWidth="75.0" text="Final user" />
+                                    <TableColumn fx:id="edificioUbiColumnA" prefWidth="75.0" text="Edificio" />
+                                    <TableColumn fx:id="pisoUbiColumnA" prefWidth="75.0" text="Piso" />
+                                    <TableColumn fx:id="cubiculoUbiColumnA" prefWidth="75.0" text="Cubiculo" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+      <Pane fx:id="panel3" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <TabPane fx:id="tabPanel0" layoutY="80.0" prefHeight="400.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="General">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="listaValGen" layoutX="225.0" layoutY="30.0" prefHeight="256.0" prefWidth="437.0" visible="false" />
+                              <VBox layoutX="36.0" layoutY="30.0" prefHeight="256.0" prefWidth="189.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="189.0" text="Equipo" />
+                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="189.0" text="Nombre" />
+                                    <Label layoutX="10.0" layoutY="37.0" prefHeight="27.0" prefWidth="189.0" text="Número de inventario" />
+                                    <Label layoutX="10.0" layoutY="64.0" prefHeight="27.0" prefWidth="189.0" text="Marca" />
+                                    <Label layoutX="10.0" layoutY="91.0" prefHeight="27.0" prefWidth="189.0" text="Modelo" />
+                                    <Label layoutX="10.0" layoutY="118.0" prefHeight="27.0" prefWidth="189.0" text="Número de serie" />
+                                    <Label layoutX="10.0" layoutY="145.0" prefHeight="27.0" prefWidth="189.0" text="Descripción" />
+                                    <Label layoutX="10.0" layoutY="172.0" prefHeight="27.0" prefWidth="189.0" text="Estado" />
+                                    <Label layoutX="10.0" layoutY="199.0" prefHeight="27.0" prefWidth="189.0" text="Usuario final" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="225.0" layoutY="30.0" prefHeight="256.0" prefWidth="291.0">
+                                 <children>
+                                    <Label fx:id="lEq" prefHeight="27.0" prefWidth="435.0" text="..." />
+                                    <Label fx:id="lNom" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="435.0" text="..." />
+                                    <Label fx:id="lNumInv" layoutX="10.0" layoutY="37.0" prefHeight="27.0" prefWidth="434.0" text="..." />
+                                    <Label fx:id="lMarc" layoutX="10.0" layoutY="64.0" prefHeight="27.0" prefWidth="437.0" text="..." />
+                                    <Label fx:id="lMod" layoutX="10.0" layoutY="91.0" prefHeight="27.0" prefWidth="436.0" text="..." />
+                                    <Label fx:id="lNumSer" layoutX="10.0" layoutY="118.0" prefHeight="27.0" prefWidth="438.0" text="..." />
+                                    <Label fx:id="lDesc" layoutX="10.0" layoutY="145.0" prefHeight="27.0" prefWidth="436.0" text="..." />
+                                    <Label fx:id="lEst" layoutX="10.0" layoutY="172.0" prefHeight="27.0" prefWidth="436.0" text="..." />
+                                    <Label fx:id="lUsFin" layoutX="10.0" layoutY="199.0" prefHeight="27.0" prefWidth="466.0" text="..." />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="526.0" layoutY="30.0" prefHeight="240.0" prefWidth="100.0">
+                                 <children>
+                                    <TextField fx:id="equipoFieldUpdate" onKeyPressed="#editParam" visible="false" />
+                                    <TextField visible="false" />
+                                    <TextField fx:id="numInvFieldUpdate" visible="false" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="650.0" layoutY="28.0" prefHeight="258.0" prefWidth="22.0">
+                                 <children>
+                                    <ImageView fx:id="editEquipo1" fitHeight="26.0" fitWidth="26.0" onMousePressed="#editClicking" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="editNumInv1" fitHeight="27.0" fitWidth="26.0" layoutX="10.0" layoutY="46.0" onMouseClicked="#editClicking" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="listaEtiqUbi" text="Ubicación">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="36.0" layoutY="31.0" prefHeight="256.0" prefWidth="189.0">
+                                 <children>
+                                    <Label prefHeight="27.0" prefWidth="189.0" text="Edificio" />
+                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="189.0" text="Piso" />
+                                    <Label layoutX="10.0" layoutY="37.0" prefHeight="27.0" prefWidth="189.0" text="Cubículo" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="225.0" layoutY="31.0" prefHeight="256.0" prefWidth="434.0">
+                                 <children>
+                                    <Label fx:id="lEdi" prefHeight="27.0" prefWidth="435.0" text="..." />
+                                    <Label fx:id="lPiso" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="435.0" text="..." />
+                                    <Label fx:id="lCub" layoutX="10.0" layoutY="37.0" prefHeight="27.0" prefWidth="434.0" text="..." />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="652.0" layoutY="31.0" prefHeight="210.0" prefWidth="19.0">
+                                 <children>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="10.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/editIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <ImageView fitHeight="86.0" fitWidth="61.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#Panel3a1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="89.0" fitWidth="79.0" layoutX="619.0" layoutY="5.0" onMouseClicked="#updateDatos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Save.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Pane fx:id="panel4" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <HBox layoutX="75.0" layoutY="100.0" prefHeight="26.0" prefWidth="535.0">
+               <children>
+                  <MenuButton fx:id="menuAdvance1" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="..." />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="Equipo" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="Nombre" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="# Inventario" />
+                        <MenuItem mnemonicParsing="false" text="# Serial" />
+                        <MenuItem mnemonicParsing="false" text="Modelo" />
+                        <MenuItem mnemonicParsing="false" text="Marca" />
+                        <MenuItem mnemonicParsing="false" text="Estado del bien" />
+                        <MenuItem mnemonicParsing="false" text="Edificio" />
+                        <MenuItem mnemonicParsing="false" text="Piso" />
+                        <MenuItem mnemonicParsing="false" text="Cubículo" />
+                     </items>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </MenuButton>
+                  <TextField fx:id="advancedTF1" onKeyPressed="#search2" prefHeight="25.0" prefWidth="378.0" />
+               </children>
+            </HBox>
+            <ImageView fitHeight="86.0" fitWidth="61.0" layoutX="23.0" layoutY="14.0" onMouseClicked="#Panel4a0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="75.0" layoutY="152.0" prefHeight="26.0" prefWidth="535.0">
+               <children>
+                  <MenuButton fx:id="menuAdvance11" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" text="...">
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="..." />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="Equipo" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="Nombre" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectButton2" text="# Inventario" />
+                        <MenuItem mnemonicParsing="false" text="# Serial" />
+                        <MenuItem mnemonicParsing="false" text="Modelo" />
+                        <MenuItem mnemonicParsing="false" text="Marca" />
+                        <MenuItem mnemonicParsing="false" text="Estado del bien" />
+                        <MenuItem mnemonicParsing="false" text="Edificio" />
+                        <MenuItem mnemonicParsing="false" text="Piso" />
+                        <MenuItem mnemonicParsing="false" text="Cubículo" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="advancedTF11" onKeyPressed="#search2" prefHeight="25.0" prefWidth="378.0" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="panel10" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <MenuButton fx:id="menuInsercion" layoutX="328.0" layoutY="24.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="378.0" text="¿Qué dato va a ingresar?">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#insertSelectMB" text="Datos Generales" />
+                <MenuItem mnemonicParsing="false" onAction="#insertSelectMB" text="Ubicación" />
+              </items>
+               <font>
+                  <Font name="Javanese Text" size="14.0" />
+               </font>
+            </MenuButton>
+            <ImageView fitHeight="48.0" fitWidth="61.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#Panel10a0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="panel11" layoutY="82.0" prefHeight="400.0" prefWidth="720.0" visible="false">
+               <children>
+                  <VBox layoutX="57.0" layoutY="11.0" prefHeight="256.0" prefWidth="189.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="189.0" text="Equipo" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="189.0" text="Nombre" />
+                        <Label layoutX="10.0" layoutY="37.0" prefHeight="27.0" prefWidth="189.0" text="Número de inventario" />
+                        <Label layoutX="10.0" layoutY="64.0" prefHeight="27.0" prefWidth="189.0" text="Marca" />
+                        <Label layoutX="10.0" layoutY="91.0" prefHeight="27.0" prefWidth="189.0" text="Modelo" />
+                        <Label layoutX="10.0" layoutY="118.0" prefHeight="27.0" prefWidth="189.0" text="Número de serie" />
+                        <Label layoutX="10.0" layoutY="145.0" prefHeight="27.0" prefWidth="189.0" text="Descripción" />
+                        <Label layoutX="10.0" layoutY="172.0" prefHeight="27.0" prefWidth="189.0" text="Estado" />
+                        <Label layoutX="10.0" layoutY="199.0" prefHeight="27.0" prefWidth="189.0" text="Usuario final" />
+                     </children>
+                  </VBox>
+                  <TextField fx:id="insertFieldEquipo" layoutX="254.0" layoutY="14.0" prefHeight="25.0" prefWidth="349.0" />
+                  <TextField fx:id="insertFieldNom" layoutX="254.0" layoutY="39.0" prefHeight="25.0" prefWidth="349.0" />
+                  <TextField fx:id="insertFieldNumInv" layoutX="254.0" layoutY="64.0" prefHeight="25.0" prefWidth="349.0" />
+                  <MenuButton fx:id="menuInsertModelo" layoutX="254.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="349.0" text="...">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#selectMBInsertMarca" text="HP" />
+                      <MenuItem mnemonicParsing="false" onAction="#selectMBInsertMarca" text="Dell" />
+                    </items>
+                  </MenuButton>
+                  <MenuButton fx:id="menuInsertMarca" layoutX="254.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="349.0" text="...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertModelo" text="X600" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertModelo" text="HPro550" />
+                     </items>
+                  </MenuButton>
+                  <TextField fx:id="insertFieldNumSer" layoutX="254.0" layoutY="139.0" prefHeight="25.0" prefWidth="349.0" />
+                  <TextField fx:id="insertFieldDesc" layoutX="254.0" layoutY="164.0" prefHeight="25.0" prefWidth="349.0" />
+                  <MenuButton fx:id="menuInsertEstado" layoutX="254.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="349.0" text="...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertEdo" text="En uso" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertEdo" text="Baja" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="menuInsertFinUser" layoutX="254.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="349.0" text="...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertFinUser" text="Alumno" />
+                        <MenuItem mnemonicParsing="false" onAction="#selectMBInsertFinUser" text="Administración" />
+                     </items>
+                  </MenuButton>
+                  <ImageView fitHeight="69.0" fitWidth="79.0" layoutX="603.0" layoutY="311.0" onMouseClicked="#saveInsercion" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Save.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>

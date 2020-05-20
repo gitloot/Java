@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+   <children>
+      <Pane fx:id="panel0" layoutX="-7.0" prefHeight="480.0" prefWidth="720.0">
+         <children>
+            <TextField fx:id="commandField" layoutX="209.0" layoutY="60.0" onKeyPressed="#search1" prefHeight="25.0" prefWidth="387.0" />
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="606.0" layoutY="41.0" onMouseClicked="#editDato" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search-icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="243.0" fitWidth="720.0" layoutX="7.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/aereafi_02.jpg" />
+               </image>
+            </ImageView>
+            <MenuButton fx:id="menuButton" layoutX="38.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="173.0" text="...">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#selectButton" text="# Inventario" />
+                <MenuItem mnemonicParsing="false" onAction="#selectButton" text="# Serial" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Modelo" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Marca" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Ubicación" />
+                  <MenuItem mnemonicParsing="false" onAction="#selectButton" text="Estado del bien" />
+              </items>
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MenuButton>
+            <HBox fx:id="searchBox" layoutX="209.0" layoutY="60.0" prefHeight="26.0" prefWidth="378.0" visible="false">
+               <children>
+                  <TextField fx:id="edificioField" onKeyPressed="#search1" />
+                  <Label text="-" textAlignment="CENTER" />
+                  <TextField fx:id="pisoField" onKeyPressed="#search1" />
+                  <Label text="-" textAlignment="CENTER" />
+                  <TextField fx:id="cubiculoField" onKeyPressed="#search1" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="panel1" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="33.0" layoutY="14.0" onMouseClicked="#returnToPanel0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="87.0" layoutX="139.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/clipboard.png" />
+               </image></ImageView>
+            <ImageView fitHeight="70.0" fitWidth="79.0" layoutX="225.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/cpu.png" />
+               </image></ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="315.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/placeholder.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="editImage" fitHeight="70.0" fitWidth="70.0" layoutX="615.0" layoutY="15.0" onMouseClicked="#editButtonAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/editIcon.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableView" editable="true" layoutX="14.0" layoutY="96.0" prefHeight="369.0" prefWidth="691.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="equipoColumn" prefWidth="75.0" text="Equipo" />
+                  <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="num_inventarioColumn" prefWidth="75.0" text="No. inventario" />
+                  <TableColumn fx:id="marcaColumn" prefWidth="75.0" text="Marca" />
+                  <TableColumn fx:id="modeloColumn" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="num_serieColumn" prefWidth="75.0" text="No. Serie" />
+                  <TableColumn fx:id="descripcionColumn" prefWidth="75.0" text="Descripcion" />
+                  <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="Estado" />
+                  <TableColumn fx:id="final_userColumn" prefWidth="75.0" text="Final user" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="tableUbicacion" editable="true" layoutX="145.0" layoutY="94.0" prefHeight="369.0" prefWidth="410.0" tableMenuButtonVisible="true">
+              <columns>
+                  <TableColumn fx:id="equipoUbiColumn" prefWidth="75.0" text="Equipo" />
+                  <TableColumn fx:id="numInvUbiColumn" prefWidth="75.0" text="No. Inventario" />
+                <TableColumn fx:id="edificioUbiColumn" prefWidth="75.0" text="Edificio" />
+                <TableColumn fx:id="pisoUbiColumn" prefWidth="75.0" text="Piso" />
+                  <TableColumn fx:id="cubiculoUbiColumn" prefWidth="75.0" text="Cubiculo" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="520.0" layoutY="15.0" onMouseClicked="#moreInfoButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/about.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panel2" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <TextField fx:id="equipoField" layoutX="452.0" layoutY="90.0" onKeyPressed="#editTextField" />
+            <ImageView fitHeight="38.0" fitWidth="147.0" layoutX="306.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/EquipoLabel.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="equipoLabel" layoutX="452.0" layoutY="68.0" prefHeight="17.0" prefWidth="148.0" text="Equipo" />
+            <TextField fx:id="numInvField" layoutX="452.0" layoutY="142.0" onKeyPressed="#editTextField" />
+            <ImageView fitHeight="38.0" fitWidth="132.0" layoutX="306.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/numInventarioLabel.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="numInvLabel" layoutX="452.0" layoutY="122.0" prefHeight="17.0" prefWidth="148.0" text="Número de inventario" />
+            <ImageView fitHeight="89.0" fitWidth="79.0" layoutX="601.0" layoutY="387.0" onMouseClicked="#updateDatos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Save.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="85.0" layoutX="36.0" layoutY="33.0" onMousePressed="#Panel2a1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panel3" prefHeight="480.0" prefWidth="720.0" visible="false">
+         <children>
+            <TabPane fx:id="tabPanel0" layoutY="80.0" prefHeight="400.0" prefWidth="720.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="General">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="listaEtiqGen" editable="true" layoutX="25.0" layoutY="30.0" prefHeight="257.0" prefWidth="200.0" />
+                              <ListView fx:id="listaValGen" layoutX="225.0" layoutY="30.0" prefHeight="256.0" prefWidth="471.0" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Ubicación">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="listaEtiqUbi" layoutX="25.0" layoutY="30.0" prefHeight="257.0" prefWidth="200.0" />
+                              <ListView fx:id="listaValUbi" layoutX="225.0" layoutY="30.0" prefHeight="258.0" prefWidth="468.0" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <ImageView fitHeight="86.0" fitWidth="61.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#Panel3a1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back-arrow.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </children>
+</Pane>
